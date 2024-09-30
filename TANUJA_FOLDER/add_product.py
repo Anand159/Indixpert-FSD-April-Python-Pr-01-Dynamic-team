@@ -46,7 +46,7 @@ class Inventory:
 
             while True:
                 name = input("Enter product name: ")
-                if not name:  # Check if name is not empty
+                if not name:  
                     print("Name cannot be empty. Please enter a valid name:")
                     continue
                 break
@@ -79,7 +79,7 @@ class Inventory:
         except Exception as e:
             print(f"An error occurred: {e}")
 
-# Example usage:
+
 if __name__ == "__main__":
     inventory = Inventory("products.json")
     inventory.add_product()
