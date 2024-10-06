@@ -1,0 +1,20 @@
+{
+  "vimal@123": {
+    "first_name": "vimal",
+    "last_name": "shahi",
+    "password": "1234567",
+    "is_admin": true
+  },
+  "tanuja@123": {
+    "first_name": "tanuja",
+    "last_name": "gariya",
+    "password": "1234567",
+    "is_admin": false
+  },
+  "anand@123": {
+    "first_name": "anand",
+    "last_name": "soni",
+    "password": "1234567",
+    "is_admin": false
+  }
+}

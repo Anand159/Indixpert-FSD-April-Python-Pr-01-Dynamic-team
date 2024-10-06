@@ -1,0 +1,18 @@
+[
+  {
+    "product_id": "Pd001",
+    "name": "milk",
+    "price": 40.0,
+    "quantity": 100,
+    "owner": "tanuja@123",
+    "creation_date": "2024-10-06 12:20:44"
+  },
+  {
+    "product_id": "Pd002",
+    "name": "apple",
+    "price": 100.0,
+    "quantity": 100,
+    "owner": "tanuja@123",
+    "creation_date": "2024-10-06 12:21:19"
+  }
+]
