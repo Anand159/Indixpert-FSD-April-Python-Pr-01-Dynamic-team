@@ -1,4 +1,4 @@
-from src.utils.helpers import display_menu, main_menu
+from src.dashboard.option_menu import display_menu, main_menu
 
 class Menu:
     def __init__(self, inventory, user_manager):
@@ -51,13 +51,12 @@ class Menu:
                 self.inventory.view_user_products(self.current_user)
             elif action == "7":
                 self.inventory.search_product()
-            elif action == "8":
-                self.inventory.search_sale_product()
-            elif action == "9" and self.inventory.users[self.current_user]["is_admin"]:
+            elif action == "8" and self.inventory.users[self.current_user]["is_admin"]:
                 self.user_manager.delete_user()
-            elif action == "10":
+            elif action == "9":
                 print("Logged out successfully.")
                 self.current_user = None
                 break
             else:
                 print("Incorrect choice. Please try again.")
+

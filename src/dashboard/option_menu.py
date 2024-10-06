@@ -13,6 +13,8 @@ def main_menu():
     print("5. Delete Product")
     print("6. View User Products (Admin only)")
     print("7. Search Product")
-    print("8. Search Sale Product")
-    print("9. Deactivate User (Admin only)")
-    print("10. Logout")
+    #print("8. Search Sale Product")
+    print("8. Deactivate User (Admin only)")
+    print("9. Logout")
+
+    

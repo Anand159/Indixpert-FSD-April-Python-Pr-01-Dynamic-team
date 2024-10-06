@@ -2,13 +2,17 @@ import os
 import json
 from .product import Product
 
+user_path=r"D:\Dynamic_Team\Indixpert-FSD-April-Python-Pr-01-Dynamic-team\src\database\users.json"
+product_path=r"D:\Dynamic_Team\Indixpert-FSD-April-Python-Pr-01-Dynamic-team\src\database\products.json"
+
+
 class Inventory:
     MAX_USERS = 4
     PASSWORD_LENGTH = 7
 
-    def __init__(self, users_filepath, products_filepath):
-        self.users_filepath = users_filepath
-        self.products_filepath = products_filepath
+    def __init__(self):
+        self.users_filepath = user_path
+        self.products_filepath = product_path
         self.ensure_data_files_exist()
         self.users = {}
         self.products = []
@@ -45,31 +49,49 @@ class Inventory:
             json.dump([product.to_dict() for product in self.products], file, indent=2)
 
     def add_product(self, username):
-        while True:
+        while True:    
             product_id = input("Enter product ID: ")
             if any(product.product_id == product_id for product in self.products):
-                print("Product with this ID already exists. Please use a different ID.")
+               print("Product with this ID already exists. Please use a different ID.")
+
             else:
                 break
 
-        name = input("Enter product name: ")
-        try:
-            price = float(input("Enter product price: "))
-            if price < 0:
-                print("Price cannot be negative.")
-                return
-            quantity = int(input("Enter product quantity: "))
-            if quantity < 0:
-                print("Quantity cannot be negative.")
-                return
-        except ValueError:
-            print("Invalid input. Please enter numeric values.")
-            return
+        while True:
+                try:
+                    name = input("Enter product name: ")
+                    if name=="":
+                        print("Invalid input.Please enter the Name ")
+                        continue    
+                    break
+                except ValueError:
+                     print("Invalid input. Please enter a valid Name:")
+                  
+        while True:
+            try:
+                price = float(input("Enter product price: "))  
+                if price <=0:  
+                    print("Price cannot be negative. Please enter a valid price:")
+                    continue
+                break
+            except ValueError:
+                print("Invalid input. Please enter a valid price number:")
 
+        while True:
+            try:
+                quantity = int(input("Enter product quantity: "))
+                if quantity <=0:  
+                    print("Quantity cannot be negative. Please enter a valid quantity:")
+                    continue
+                break
+            except ValueError:
+                print("Invalid input. Please enter a valid quantity number:")
+        
         new_product = Product(product_id, name, price, quantity, username)
         self.products.append(new_product)
         self.save_products()
         print("Product added successfully.")
+
 
     def sell_product(self, username):
         product_id = input("Enter product ID to sell: ")
