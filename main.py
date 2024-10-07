@@ -8,6 +8,3 @@ if __name__ == "__main__":
     menu = Menu(inventory, user_manager)
     menu.start()
 
-
-
-
